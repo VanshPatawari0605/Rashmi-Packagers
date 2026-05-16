@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Our Products — Rashmi Packagers{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Our Products</h1>
+        <p>High quality PP woven bags manufactured in Kolkata</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="products-detail-grid">
+
+            <div class="product-detail-card">
+                <div class="product-detail-icon">🏗️</div>
+                <h2>Cement PP Bags</h2>
+                <p>Heavy-duty woven polypropylene sacks specifically designed for cement, sand, gravel and other construction materials. Built to withstand rough handling and heavy loads.</p>
+                <div class="specs-table">
+                    <div class="spec-row"><span>Material</span><span>PP Woven</span></div>
+                    <div class="spec-row"><span>Usage</span><span>Cement, Sand, Gravel</span></div>
+                    <div class="spec-row"><span>Order Type</span><span>Bulk / Sample</span></div>
+                    <div class="spec-row"><span>Custom Size</span><span>Available</span></div>
+                </div>
+                <a href="{{ url_for('main.enquiry') }}" class="btn-primary">Get Quote</a>
+            </div>
+
+            <div class="product-detail-card">
+                <div class="product-detail-icon">📦</div>
+                <h2>Foam Packaging Sacks</h2>
+                <p>Lightweight yet durable PP bags ideal for foam and cushioning material packaging. Keeps contents safe during transport and storage.</p>
+                <div class="specs-table">
+                    <div class="spec-row"><span>Material</span><span>PP Woven</span></div>
+                    <div class="spec-row"><span>Usage</span><span>Foam, Cushioning</span></div>
+                    <div class="spec-row"><span>Order Type</span><span>Bulk / Sample</span></div>
+                    <div class="spec-row"><span>Custom Size</span><span>Available</span></div>
+                </div>
+                <a href="{{ url_for('main.enquiry') }}" class="btn-primary">Get Quote</a>
+            </div>
+
+            <div class="product-detail-card">
+                <div class="product-detail-icon">🔧</div>
+                <h2>Custom Cut & Stitched Bags</h2>
+                <p>We take raw PP rolls and cut, resize and stitch them to any dimension you need. Perfect for businesses with specific packaging requirements.</p>
+                <div class="specs-table">
+                    <div class="spec-row"><span>Material</span><span>PP Rolls / Woven</span></div>
+                    <div class="spec-row"><span>Usage</span><span>Any Industrial Use</span></div>
+                    <div class="spec-row"><span>Order Type</span><span>Bulk / Sample</span></div>
+                    <div class="spec-row"><span>Custom Size</span><span>Yes — Any Size</span></div>
+                </div>
+                <a href="{{ url_for('main.enquiry') }}" class="btn-primary">Get Quote</a>
+            </div>
+
+            <div class="product-detail-card">
+                <div class="product-detail-icon">🌀</div>
+                <h2>Industrial PP Rolls</h2>
+                <p>Raw PP plastic rolls available for bulk purchase. Ideal for manufacturers who need raw material for their own cutting and stitching operations.</p>
+                <div class="specs-table">
+                    <div class="spec-row"><span>Material</span><span>Raw PP Plastic</span></div>
+                    <div class="spec-row"><span>Usage</span><span>Industrial / Manufacturing</span></div>
+                    <div class="spec-row"><span>Order Type</span><span>Bulk Only</span></div>
+                    <div class="spec-row"><span>Custom Width</span><span>Available</span></div>
+                </div>
+                <a href="{{ url_for('main.enquiry') }}" class="btn-primary">Get Quote</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section cta-section">
+    <div class="container">
+        <h2>Need a Custom Size or Bulk Quote?</h2>
+        <p>Tell us your requirements and we'll get back to you within hours</p>
+        <a href="{{ url_for('main.enquiry') }}" class="btn-primary">Place Your Order</a>
+    </div>
+</section>
+
+{% endblock %}

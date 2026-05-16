@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Place Order — Rashmi Packagers{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Place Your Order</h1>
+        <p>Fill in your details and we'll contact you within hours</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="form-wrapper">
+            <form method="POST" action="{{ url_for('main.enquiry') }}" class="enquiry-form">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXXXXXXX" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address (optional)</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="product">Product Required *</label>
+                        <select id="product" name="product" required>
+                            <option value="" disabled selected>Select a product</option>
+                            <option value="Cement PP Bags">Cement PP Bags</option>
+                            <option value="Foam Packaging Sacks">Foam Packaging Sacks</option>
+                            <option value="Custom Cut & Stitched Bags">Custom Cut & Stitched Bags</option>
+                            <option value="Industrial PP Rolls">Industrial PP Rolls</option>
+                            <option value="Other">Other / Not Sure</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Order Type *</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="order_type" value="bulk" required>
+                            <span class="radio-box">
+                                <span class="radio-title">📦 Bulk Order</span>
+                                <span class="radio-desc">Large quantity for regular business use</span>
+                            </span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="order_type" value="sample">
+                            <span class="radio-box">
+                                <span class="radio-title">🧪 Sample Request</span>
+                                <span class="radio-desc">Try before placing a bulk order</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity / Size Details</label>
+                    <input type="text" id="quantity" name="quantity" placeholder="e.g. 500 bags, 50kg capacity, 24x36 inches">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Requirements</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Any specific requirements — printing, custom size, delivery location, etc."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Enquiry →</button>
+
+            </form>
+
+            <div class="form-contact-aside">
+                <h3>Prefer to contact directly?</h3>
+                <a href="https://wa.me/917490016401" target="_blank" class="aside-btn-wa">💬 WhatsApp Us</a>
+                <a href="tel:+917290040537" class="aside-btn-call">📞 Call +91 72900 40537</a>
+                <div class="aside-info">
+                    <p>📍 5A, Lala Babu Lane, Kolkata - 700002</p>
+                    <p>🕐 Mon – Sat, 9 AM – 7 PM</p>
+                    <p>✉️ vikras1977@gmail.com</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

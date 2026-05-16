@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Admin Panel — Rashmi Packagers{% endblock %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <div class="admin-header">
+            <h1>📋 All Enquiries</h1>
+            <a href="{{ url_for('main.logout') }}" class="btn-logout">Logout</a>
+        </div>
+
+        <div class="admin-stats">
+            <div class="admin-stat-card">
+                <div class="stat-number">{{ enquiries|length }}</div>
+                <div class="stat-label">Total Enquiries</div>
+            </div>
+            <div class="admin-stat-card">
+                <div class="stat-number">{{ enquiries|selectattr('order_type', 'equalto', 'bulk')|list|length }}</div>
+                <div class="stat-label">Bulk Orders</div>
+            </div>
+            <div class="admin-stat-card">
+                <div class="stat-number">{{ enquiries|selectattr('order_type', 'equalto', 'sample')|list|length }}</div>
+                <div class="stat-label">Sample Requests</div>
+            </div>
+        </div>
+
+        {% if enquiries %}
+        <div class="table-wrapper">
+            <table class="enquiry-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Product</th>
+                        <th>Type</th>
+                        <th>Quantity</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in enquiries %}
+                    <tr>
+                        <td>{{ e.id }}</td>
+                        <td><strong>{{ e.name }}</strong></td>
+                        <td>
+                            <a href="tel:+91{{ e.phone }}" class="table-call">📞 {{ e.phone }}</a><br>
+                            <a href="https://wa.me/91{{ e.phone }}" target="_blank" class="table-wa">💬 WhatsApp</a>
+                        </td>
+                        <td>{{ e.email or '—' }}</td>
+                        <td>{{ e.product }}</td>
+                        <td>
+                            {% if e.order_type == 'bulk' %}
+                                <span class="badge-bulk">Bulk</span>
+                            {% else %}
+                                <span class="badge-sample">Sample</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ e.quantity or '—' }}</td>
+                        <td>{{ e.message or '—' }}</td>
+                        <td>{{ e.submitted_at.strftime('%d %b %Y, %I:%M %p') }}</td>
+                        <td>
+                            <a href="{{ url_for('main.delete_enquiry', id=e.id) }}"
+                               onclick="return confirm('Delete this enquiry?')"
+                               class="btn-delete">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <div class="no-enquiries">
+                <p>No enquiries yet. They'll show up here once customers submit the form.</p>
+            </div>
+        {% endif %}
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Rashmi Packagers — PP Bag Manufacturers, Kolkata{% endblock %}
+
+{% block content %}
+
+<!-- ── HERO ── -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">Kolkata's Trusted PP Bag Manufacturer</div>
+        <h1 class="hero-title">Strong Bags.<br>Built for Industry.</h1>
+        <p class="hero-subtitle">We manufacture high-quality PP woven sacks for cement, foam, and industrial use. Custom cutting, resizing & stitching available.</p>
+        <div class="hero-btns">
+            <a href="{{ url_for('main.enquiry') }}" class="btn-primary">Place an Order</a>
+            <a href="{{ url_for('main.products') }}" class="btn-secondary">View Products</a>
+        </div>
+    </div>
+</section>
+
+<!-- ── STATS STRIP ── -->
+<section class="stats-strip">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Skilled Labourers</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years in Business</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Product Types</div>
+        </div>
+    </div>
+</section>
+
+<!-- ── PRODUCTS PREVIEW ── -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Products</h2>
+            <p>Quality PP bags manufactured to your exact specifications</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🏗️</div>
+                <h3>Cement PP Bags</h3>
+                <p>Heavy-duty woven PP sacks designed for cement, sand, and construction materials. High tensile strength.</p>
+                <a href="{{ url_for('main.enquiry') }}" class="btn-quote">Get Quote →</a>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">📦</div>
+                <h3>Foam Packaging Sacks</h3>
+                <p>Lightweight yet durable PP bags for foam and cushioning material packaging. Custom sizes available.</p>
+                <a href="{{ url_for('main.enquiry') }}" class="btn-quote">Get Quote →</a>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🔧</div>
+                <h3>Custom Cut & Stitched</h3>
+                <p>We cut, resize and stitch PP rolls to any size you need. Bulk orders welcome.</p>
+                <a href="{{ url_for('main.enquiry') }}" class="btn-quote">Get Quote →</a>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top: 40px;">
+            <a href="{{ url_for('main.products') }}" class="btn-primary">View All Products</a>
+        </div>
+    </div>
+</section>
+
+<!-- ── WHY US ── -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header light">
+            <h2>Why Choose Rashmi Packagers?</h2>
+            <p>Trusted by businesses across West Bengal</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">⚡</div>
+                <h4>Fast Turnaround</h4>
+                <p>Quick production and delivery even for bulk orders</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🎯</div>
+                <h4>Custom Sizes</h4>
+                <p>Any dimension, any quantity — we cut and stitch to spec</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">✅</div>
+                <h4>Quality Assured</h4>
+                <p>Every batch checked before dispatch</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💰</div>
+                <h4>Competitive Pricing</h4>
+                <p>Factory-direct pricing with no middlemen</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🏭</div>
+                <h4>15+ Skilled Workers</h4>
+                <p>Experienced team handling every order with care</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">📍</div>
+                <h4>Based in Kolkata</h4>
+                <p>Serving West Bengal and beyond since years</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── PLACE ORDER CTA ── -->
+<section class="section cta-section">
+    <div class="container">
+        <h2>Ready to Place an Order?</h2>
+        <p>Fill in your details and we'll get back to you within hours</p>
+        <a href="{{ url_for('main.enquiry') }}" class="btn-primary">Place Your Order Now</a>
+    </div>
+</section>
+
+{% endblock %}
