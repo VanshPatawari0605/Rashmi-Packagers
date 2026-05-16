@@ -1283,3 +1283,178 @@ a {
     font-size: 12px;
     color: rgba(255,255,255,0.25);
 }
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        padding: 0 16px;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .btn-wa, .btn-call, .btn-email {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Products */
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Why us */
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* About */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Vision */
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Address */
+    .address-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Enquiry form */
+    .form-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .radio-group {
+        grid-template-columns: 1fr;
+    }
+
+    .form-contact-aside {
+        position: static;
+    }
+
+    /* Admin */
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    /* Page hero */
+    .page-hero h1 {
+        font-size: 32px;
+    }
+
+    /* CTA */
+    .cta-section h2 {
+        font-size: 26px;
+    }
+
+    /* Splash */
+    .splash-title {
+        font-size: 28px;
+    }
+}
+
+/* Hamburger menu for mobile */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-hamburger span {
+    width: 22px;
+    height: 2px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    .nav-hamburger {
+        display: flex;
+    }
+
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 12px 0;
+        gap: 16px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        margin-top: 8px;
+    }
+}

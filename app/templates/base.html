@@ -26,12 +26,14 @@
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Rashmi Packagers Logo" class="nav-logo">
                 <span class="nav-name">Rashmi Packagers</span>
             </a>
-            <div class="nav-links">
+
+            <div class="nav-links" id="navLinks">
                 <a href="{{ url_for('main.index') }}">Home</a>
                 <a href="{{ url_for('main.products') }}">Products</a>
                 <a href="{{ url_for('main.about') }}">About Us</a>
                 <a href="{{ url_for('main.enquiry') }}">Place Order</a>
             </div>
+
             <div class="nav-actions">
                 <a href="https://wa.me/917490016401" target="_blank" class="btn-wa">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -39,9 +41,7 @@
                     </svg>
                     WhatsApp
                 </a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vikras1977@gmail.com"
-   target="_blank"
-   class="btn-email">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vikras1977@gmail.com" target="_blank" class="btn-email">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
                     </svg>
@@ -53,7 +53,22 @@
                     </svg>
                     Call Us
                 </a>
+
+                <!-- Hamburger -->
+                <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
+        </div>
+
+        <!-- Mobile menu dropdown -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="{{ url_for('main.index') }}" onclick="toggleMenu()">🏠 Home</a>
+            <a href="{{ url_for('main.products') }}" onclick="toggleMenu()">📦 Products</a>
+            <a href="{{ url_for('main.about') }}" onclick="toggleMenu()">🏭 About Us</a>
+            <a href="{{ url_for('main.enquiry') }}" onclick="toggleMenu()">📋 Place Order</a>
         </div>
     </nav>
 
@@ -145,13 +160,22 @@
         </div>
     </footer>
 
-    <!-- ── SPLASH DISMISS SCRIPT ── -->
+    <!-- ── SCRIPTS ── -->
     <script>
+        // Splash dismiss
         setTimeout(() => {
             const splash = document.getElementById('splash');
             splash.style.display = 'none';
             document.body.classList.remove('splash-active');
         }, 3900);
+
+        // Hamburger menu
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.getElementById('hamburger');
+            menu.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        }
     </script>
 
 </body>
